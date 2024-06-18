@@ -1,7 +1,7 @@
 <h1>Démonstrations Pipes</h1>
 
-<div>
-    <h2>Pipes intégrés</h2>
+<fieldset>
+    <legend>Pipes intégrés</legend>
     <!-- Pipe uppercase -->
     <p>Texte original : {{texte}}</p>
     <p>Texte en majuscules : {{texte | uppercase}}</p>
@@ -34,12 +34,12 @@
     <p>Tableau original : {{tableau}}</p>
     <p>Slice (2 à 5) : {{tableau | slice:2:5}}</p>
     <p>Slice (dernier élément) : {{tableau | slice:-1}}</p>
-</div>
+</fieldset>
 
-<div>
-    <h2>Pipes Custom</h2>
+<fieldset>
+    <legend>Pipes Custom</legend>
     <p>Chaine originale : 'Angular'</p>
     <p>Chaine Formatée : {{ 'Angular' | formatter:"Hello, ":" !!!"}}</p>
-    <p>Prix original : 100</p>
-    <p>Prixx avec réduction : {{ 100 | reduction:20:'€'}}</p>
-</div>
+    <p>Prix original : 100 €</p>
+    <p>Prix avec réduction : {{ 100 | reduction:20:'€'}}</p>
+</fieldset>

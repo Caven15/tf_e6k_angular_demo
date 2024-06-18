@@ -11,6 +11,8 @@ import { PipeComponent } from './components/demos/pipe/pipe.component';
 import { FormatterPipe } from './pipes/formatter.pipe';
 import { ReductionPipe } from './pipes/reduction.pipe';
 import { ChronometreComponent } from './components/exos/chronometre/chronometre.component';
+import { DirectivesComponent } from './components/demos/directives/directives.component';
+import { SurbrillanceDirective } from './directives/surbrillance.directive';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { ChronometreComponent } from './components/exos/chronometre/chronometre.
     FormatterPipe,
     ReductionPipe,
     ChronometreComponent,
+    DirectivesComponent,
+    SurbrillanceDirective,
   ],
   imports: [
     BrowserModule,
