@@ -6,6 +6,7 @@ import { PipeComponent } from './components/demos/pipe/pipe.component';
 import { ChronometreComponent } from './components/exos/chronometre/chronometre.component';
 import { DirectivesComponent } from './components/demos/directives/directives.component';
 import { ListeProduitsComponent } from './components/exos/liste-produits/liste-produits.component';
+import { ParentComponent } from './components/demos/inputOutput/parent/parent.component';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
         { path: 'binding', component: BindingComponent},
         { path: 'pipe', component: PipeComponent},
         { path: 'directive', component: DirectivesComponent},
+        { path: 'inputOutput', component: ParentComponent},
     ]},
     { path: 'exos', children: [
         { path : 'chronometre', component : ChronometreComponent},

@@ -14,6 +14,8 @@ import { ChronometreComponent } from './components/exos/chronometre/chronometre.
 import { DirectivesComponent } from './components/demos/directives/directives.component';
 import { SurbrillanceDirective } from './directives/surbrillance.directive';
 import { ListeProduitsComponent } from './components/exos/liste-produits/liste-produits.component';
+import { ParentComponent } from './components/demos/inputOutput/parent/parent.component';
+import { EnfantComponent } from './components/demos/inputOutput/enfant/enfant.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { ListeProduitsComponent } from './components/exos/liste-produits/liste-p
     DirectivesComponent,
     SurbrillanceDirective,
     ListeProduitsComponent,
+    ParentComponent,
+    EnfantComponent,
   ],
   imports: [
     BrowserModule,
