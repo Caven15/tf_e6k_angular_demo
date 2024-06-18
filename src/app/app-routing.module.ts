@@ -3,12 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './shared/home/home.component';
 import { BindingComponent } from './components/demos/binding/binding.component';
 import { PipeComponent } from './components/demos/pipe/pipe.component';
+import { ChronometreComponent } from './components/exos/chronometre/chronometre.component';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent},
-    { path: "demos", children: [
+    { path: 'demos', children: [
         { path: 'binding', component: BindingComponent},
         { path: 'pipe', component: PipeComponent},
+    ]},
+    { path: 'exos', children: [
+        { path : 'chronometre', component : ChronometreComponent}
     ]},
     { path: '', redirectTo: 'home', pathMatch: 'full'} // Redirection par défault
 ];

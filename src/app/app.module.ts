@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { PipeComponent } from './components/demos/pipe/pipe.component';
 import { FormatterPipe } from './pipes/formatter.pipe';
 import { ReductionPipe } from './pipes/reduction.pipe';
+import { ChronometreComponent } from './components/exos/chronometre/chronometre.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ReductionPipe } from './pipes/reduction.pipe';
     PipeComponent,
     FormatterPipe,
     ReductionPipe,
+    ChronometreComponent,
   ],
   imports: [
     BrowserModule,
