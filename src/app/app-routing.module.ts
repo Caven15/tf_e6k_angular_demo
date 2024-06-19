@@ -7,6 +7,7 @@ import { ChronometreComponent } from './components/exos/chronometre/chronometre.
 import { DirectivesComponent } from './components/demos/directives/directives.component';
 import { ListeProduitsComponent } from './components/exos/liste-produits/liste-produits.component';
 import { ParentComponent } from './components/demos/inputOutput/parent/parent.component';
+import { ShoppingComponent } from './components/exos/shoppingList/shopping/shopping.component';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
     ]},
     { path: 'exos', children: [
         { path : 'chronometre', component : ChronometreComponent},
-        { path : 'listeProduits', component: ListeProduitsComponent}
+        { path : 'listeProduits', component: ListeProduitsComponent},
+        { path : 'shopping', component: ShoppingComponent},
     ]},
     { path: '', redirectTo: 'home', pathMatch: 'full'} // Redirection par défault
 ];

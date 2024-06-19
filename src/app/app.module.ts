@@ -16,6 +16,9 @@ import { SurbrillanceDirective } from './directives/surbrillance.directive';
 import { ListeProduitsComponent } from './components/exos/liste-produits/liste-produits.component';
 import { ParentComponent } from './components/demos/inputOutput/parent/parent.component';
 import { EnfantComponent } from './components/demos/inputOutput/enfant/enfant.component';
+import { AffichageListeComponent } from './components/exos/shoppingList/affichage-liste/affichage-liste.component';
+import { AjoutArticleComponent } from './components/exos/shoppingList/ajout-article/ajout-article.component';
+import { ShoppingComponent } from './components/exos/shoppingList/shopping/shopping.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,9 @@ import { EnfantComponent } from './components/demos/inputOutput/enfant/enfant.co
     ListeProduitsComponent,
     ParentComponent,
     EnfantComponent,
+    AffichageListeComponent,
+    AjoutArticleComponent,
+    ShoppingComponent,
   ],
   imports: [
     BrowserModule,
