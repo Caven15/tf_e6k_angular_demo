@@ -10,11 +10,12 @@ export class ShoppingComponent {
     prochainId : number = 1
 
     ajouterArticleParent(nom : string){
-        this.articlesParent.push({ id : this.prochainId, nom})
+        this.articlesParent.push({ id : this.prochainId, nom : nom})
         this.prochainId++
     }
 
     supprimerArticleParent(id : number){
-        this.articlesParent.slice(id, 1)
+        let index = this.articlesParent.findIndex(article => article.id === id)
+        this.articlesParent.splice(index, 1)
     }
 }
