@@ -11,6 +11,9 @@ import { ShoppingComponent } from './components/exos/shoppingList/shopping/shopp
 import { LivreServiceComponent } from './components/demos/livre-service/livre-service.component';
 import { ShoppingListServiceComponent } from './components/exos/shopping-list-service/shopping-list-service.component';
 import { FormulaireComponent } from './components/demos/formulaire/formulaire.component';
+import { RoutingComponent } from './components/demos/routing/routing/routing.component';
+import { ProfilUtilisateurComponent } from './components/demos/routing/profil-utilisateur/profil-utilisateur.component';
+import { authGuard } from './tools/guards/auth.guard';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent},
@@ -20,7 +23,9 @@ const routes: Routes = [
         { path: 'directive', component: DirectivesComponent},
         { path: 'inputOutput', component: ParentComponent},
         { path: 'service', component: LivreServiceComponent},
-        { path: 'formulaire', component: FormulaireComponent}
+        { path: 'formulaire', component: FormulaireComponent},
+        { path: 'profil', component: ProfilUtilisateurComponent, canActivate: [authGuard]},
+        { path: 'routing', component: RoutingComponent}
     ]},
     { path: 'exos', children: [
         { path : 'chronometre', component : ChronometreComponent},
