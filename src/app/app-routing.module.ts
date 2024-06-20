@@ -9,6 +9,7 @@ import { ListeProduitsComponent } from './components/exos/liste-produits/liste-p
 import { ParentComponent } from './components/demos/inputOutput/parent/parent.component';
 import { ShoppingComponent } from './components/exos/shoppingList/shopping/shopping.component';
 import { LivreServiceComponent } from './components/demos/livre-service/livre-service.component';
+import { ShoppingListServiceComponent } from './components/exos/shopping-list-service/shopping-list-service.component';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
         { path : 'chronometre', component : ChronometreComponent},
         { path : 'listeProduits', component: ListeProduitsComponent},
         { path : 'shopping', component: ShoppingComponent},
+        { path : 'shoppingService', component : ShoppingListServiceComponent}
     ]},
     { path: '', redirectTo: 'home', pathMatch: 'full'} // Redirection par défault
 ];
