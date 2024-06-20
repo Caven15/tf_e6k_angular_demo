@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './shared/home/home.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { BindingComponent } from './components/demos/binding/binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PipeComponent } from './components/demos/pipe/pipe.component';
 import { FormatterPipe } from './tools/pipes/formatter.pipe';
 import { ReductionPipe } from './tools/pipes/reduction.pipe';
@@ -21,6 +21,7 @@ import { AjoutArticleComponent } from './components/exos/shoppingList/ajout-arti
 import { ShoppingComponent } from './components/exos/shoppingList/shopping/shopping.component';
 import { LivreServiceComponent } from './components/demos/livre-service/livre-service.component';
 import { ShoppingListServiceComponent } from './components/exos/shopping-list-service/shopping-list-service.component';
+import { FormulaireComponent } from './components/demos/formulaire/formulaire.component';
 
 @NgModule({
   declarations: [
@@ -42,11 +43,13 @@ import { ShoppingListServiceComponent } from './components/exos/shopping-list-se
     ShoppingComponent,
     LivreServiceComponent,
     ShoppingListServiceComponent,
+    FormulaireComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideClientHydration()

@@ -26,10 +26,9 @@ export class ShoppingListService {
         console.log(quantite);
         const article = this.articles.find(article => article.nom === nom)
         if (article){
-            if (article.quantite < 2) {
+            article.quantite = quantite
+            if (article.quantite <= 0) {
                 this.supprimerArticle()
-            } else {
-                article.quantite = quantite
             }
         }
     }
