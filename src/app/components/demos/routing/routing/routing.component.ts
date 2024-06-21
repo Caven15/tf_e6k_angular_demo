@@ -11,12 +11,13 @@ export class RoutingComponent {
 
     username: string = ""
     password: string = ""
+    idUtilisateur : number = 1
 
     constructor(private authService : FakeAuthService, private router : Router){}
 
     validation(): void {
         if(this.authService.login(this.username, this.password)){
-            this.router.navigate(['/demos/profil'])
+            this.router.navigate(['/demos/profil', this.idUtilisateur])
         } else{
             alert("Echec de la connexion ...")
         }

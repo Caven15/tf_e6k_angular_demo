@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FakeAuthService } from '../../tools/services/fake-auth.service';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+    estConnecte : boolean = false
 
+    constructor(private fakeAuth : FakeAuthService){
+        this.estConnecte = fakeAuth.estConnecte()
+    }
+
+    // ngOnInit(){
+
+    // }
 }

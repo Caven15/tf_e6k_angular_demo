@@ -24,7 +24,7 @@ const routes: Routes = [
         { path: 'inputOutput', component: ParentComponent},
         { path: 'service', component: LivreServiceComponent},
         { path: 'formulaire', component: FormulaireComponent},
-        { path: 'profil', component: ProfilUtilisateurComponent, canActivate: [authGuard]},
+        { path: 'profil/:idUtilisateur', component: ProfilUtilisateurComponent, canActivate: [authGuard]},
         { path: 'routing', component: RoutingComponent}
     ]},
     { path: 'exos', children: [

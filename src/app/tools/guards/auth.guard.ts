@@ -5,7 +5,7 @@ import { truncate } from 'fs';
 
 export const authGuard: CanActivateFn = (route, state) => {
 
-    // Même logique que le constructeur en version 17 d'Angular
+    // Même logique que le constructeur en version 17 Angular
     const authService = inject(FakeAuthService)
     const router = inject(Router)
 
