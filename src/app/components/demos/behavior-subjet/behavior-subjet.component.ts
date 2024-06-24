@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
-import { EtatService } from '../../tools/services/etat.service';
+import { EtatService } from '../../../tools/services/etat.service';
 
 @Component({
-  selector: 'app-nav-bar',
-  templateUrl: './nav-bar.component.html',
-  styleUrl: './nav-bar.component.scss'
+    selector: 'app-behavior-subjet',
+    templateUrl: './behavior-subjet.component.html',
+    styleUrl: './behavior-subjet.component.scss'
 })
-export class NavBarComponent {
-    etat : string = ""
+export class BehaviorSubjetComponent {
+    etat! : string
+    newEtat : string = ""
+
     constructor(private etatService: EtatService) {
         // V1
         // this.etatService.etat$.subscribe((etat) => {
@@ -27,5 +29,10 @@ export class NavBarComponent {
             }
         })
 
+    }
+
+    updateEtat() : void{
+        console.log(this.newEtat);
+        this.etatService.updateEtat(this.newEtat)
     }
 }

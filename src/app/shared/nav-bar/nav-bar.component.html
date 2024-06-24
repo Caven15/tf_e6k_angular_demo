@@ -12,6 +12,9 @@
                 <a routerLink="/demos/formulaire">Formulaire</a>
                 <a routerLink="/demos/routing">Routing</a>
                 <a routerLink="/demos/storage">Session storage</a>
+                <a routerLink="/demos/behaviorSubject">Behavior Subject</a>
+
+
             </div>
         </ul>
         <ul class="dropdown">
@@ -25,6 +28,10 @@
         </ul>
     </div>
     <div class="nav-bar-right">
-        <span>Angular</span>
+        @if (etat === 'état initial') {
+            <p>état a l'abonement de behaviorSubject</p>
+        } @else {
+            <p>Ha, changement d'éat, je ne suis plus sur l'état initial....</p>
+        }
     </div>
 </nav>

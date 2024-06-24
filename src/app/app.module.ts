@@ -27,6 +27,7 @@ import { RoutingComponent } from './components/demos/routing/routing/routing.com
 import { SessionStorageComponent } from './components/demos/storage/session-storage/session-storage.component';
 import { LocalStorageComponent } from './components/demos/storage/local-storage/local-storage.component';
 import { StorageComponent } from './components/demos/storage/storage/storage.component';
+import { BehaviorSubjetComponent } from './components/demos/behavior-subjet/behavior-subjet.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { StorageComponent } from './components/demos/storage/storage/storage.com
     SessionStorageComponent,
     LocalStorageComponent,
     StorageComponent,
+    BehaviorSubjetComponent,
   ],
   imports: [
     BrowserModule,
