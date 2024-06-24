@@ -14,6 +14,7 @@ import { FormulaireComponent } from './components/demos/formulaire/formulaire.co
 import { RoutingComponent } from './components/demos/routing/routing/routing.component';
 import { ProfilUtilisateurComponent } from './components/demos/routing/profil-utilisateur/profil-utilisateur.component';
 import { authGuard } from './tools/guards/auth.guard';
+import { StorageComponent } from './components/demos/storage/storage/storage.component';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent},
@@ -25,7 +26,8 @@ const routes: Routes = [
         { path: 'service', component: LivreServiceComponent},
         { path: 'formulaire', component: FormulaireComponent},
         { path: 'profil/:idUtilisateur', component: ProfilUtilisateurComponent, canActivate: [authGuard]},
-        { path: 'routing', component: RoutingComponent}
+        { path: 'routing', component: RoutingComponent},
+        { path: 'storage', component: StorageComponent},
     ]},
     { path: 'exos', children: [
         { path : 'chronometre', component : ChronometreComponent},

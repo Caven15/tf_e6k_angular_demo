@@ -1,0 +1,13 @@
+<fieldset>
+    <legend>Démonstration Session storage</legend>
+    <div>
+        <button (click)="saveToSession()">Sauvergarde dans le sessionStorage</button>
+        <button (click)="loadFromSession()">chargement du sessionStorage</button>
+        <button (click)="clear()">vidange du sessionStorage</button>
+        @if (sessionStorageValue) {
+            {{sessionStorageValue | json}}
+        } @else {
+            Aucune valeur dans le sessionStorage
+        }
+    </div>
+</fieldset>

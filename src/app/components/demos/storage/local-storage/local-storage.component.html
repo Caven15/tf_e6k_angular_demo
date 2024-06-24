@@ -1,0 +1,13 @@
+<fieldset>
+    <legend>Démonstration Local storage</legend>
+    <div>
+        <button (click)="saveToLocal()">Sauvergarde dans le localStorage</button>
+        <button (click)="loadFromLocal()">chargement du localStorage</button>
+        <button (click)="clear()">vidange du localStorage</button>
+        @if (localStorageValue) {
+            {{localStorageValue | json}}
+        } @else {
+            Aucune valeur dans le localStorage
+        }
+    </div>
+</fieldset>

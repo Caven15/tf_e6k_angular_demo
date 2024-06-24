@@ -24,6 +24,9 @@ import { ShoppingListServiceComponent } from './components/exos/shopping-list-se
 import { FormulaireComponent } from './components/demos/formulaire/formulaire.component';
 import { ProfilUtilisateurComponent } from './components/demos/routing/profil-utilisateur/profil-utilisateur.component';
 import { RoutingComponent } from './components/demos/routing/routing/routing.component';
+import { SessionStorageComponent } from './components/demos/storage/session-storage/session-storage.component';
+import { LocalStorageComponent } from './components/demos/storage/local-storage/local-storage.component';
+import { StorageComponent } from './components/demos/storage/storage/storage.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +51,9 @@ import { RoutingComponent } from './components/demos/routing/routing/routing.com
     FormulaireComponent,
     ProfilUtilisateurComponent,
     RoutingComponent,
+    SessionStorageComponent,
+    LocalStorageComponent,
+    StorageComponent,
   ],
   imports: [
     BrowserModule,
