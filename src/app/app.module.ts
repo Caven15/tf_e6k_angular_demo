@@ -30,6 +30,8 @@ import { BehaviorSubjetComponent } from './components/demos/behavior-subjet/beha
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
 import { ConsoApiComponent } from './components/demos/conso-api/conso-api.component';
+import { ListComponent } from './components/exos/pokedex/list/list.component';
+import { DetailComponent } from './components/exos/pokedex/detail/detail.component';
 
 @NgModule({
     declarations: [
@@ -59,17 +61,19 @@ import { ConsoApiComponent } from './components/demos/conso-api/conso-api.compon
         StorageComponent,
         BehaviorSubjetComponent,
         ConsoApiComponent,
+        ListComponent,
+        DetailComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         FormsModule,
         ReactiveFormsModule,
-        HttpClientModule // Utilisé pour les version <= 17
+        // HttpClientModule // Utilisé pour les version <= 17
     ],
     providers: [
         provideClientHydration(),
-        // provideHttpClient(withFetch(), withInterceptorsFromDi()) // Recommandé dans les nouvelles version angular
+        provideHttpClient(withFetch(), withInterceptorsFromDi()) // Recommandé dans les nouvelles version angular
     ],
     bootstrap: [AppComponent]
 })

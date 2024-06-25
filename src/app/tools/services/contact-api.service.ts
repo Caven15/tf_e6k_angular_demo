@@ -11,7 +11,7 @@ export class ContactApiService {
 
     constructor(private httpClient: HttpClient) { }
 
-    recupererPosts() :  Observable<Post[]>{
-        return this.httpClient.get<Post[]>(this.apiUrl)
+    recupererPosts():Observable<Post[]>{
+        return this.httpClient.get<Post[]>(`${this.apiUrl}`)
     }
 }

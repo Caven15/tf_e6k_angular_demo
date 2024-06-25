@@ -1,0 +1,21 @@
+.card-fixed-size {
+    width: 400px;
+    height: 300px;
+    transition: transform 0.3s ease;
+    /* Ajoute une transition pour une animation fluide */
+}
+
+.card-img-fixed-size {
+    width: 100%;
+    height: 200px;
+    max-height: 200px;
+    padding: 10px;
+    object-fit: contain;
+    background-color: #f8f9fa;
+    /* Couleur de fond pour les bordures */
+}
+
+a:hover .card-fixed-size {
+    transform: scale(1.05);
+    /* Agrandit la carte de 5% lors du survol */
+}

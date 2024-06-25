@@ -17,6 +17,8 @@ import { StorageComponent } from './components/demos/storage/storage/storage.com
 import { BehaviorSubjetComponent } from './components/demos/behavior-subjet/behavior-subjet.component';
 import { ConsoApiComponent } from './components/demos/conso-api/conso-api.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ListComponent } from './components/exos/pokedex/list/list.component';
+import { DetailComponent } from './components/exos/pokedex/detail/detail.component';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent},
@@ -37,7 +39,9 @@ const routes: Routes = [
         { path : 'chronometre', component : ChronometreComponent},
         { path : 'listeProduits', component: ListeProduitsComponent},
         { path : 'shopping', component: ShoppingComponent},
-        { path : 'shoppingService', component : ShoppingListServiceComponent}
+        { path : 'shoppingService', component : ShoppingListServiceComponent},
+        { path : 'pokedex', component : ListComponent},
+        { path : 'pokemon/:id', component : DetailComponent}
     ]},
     { path: '', redirectTo: 'home', pathMatch: 'full'} // Redirection par défault
 ];
