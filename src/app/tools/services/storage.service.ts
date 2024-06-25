@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Json } from 'sequelize/types/utils';
 
 @Injectable({
     providedIn: 'root'
@@ -29,7 +28,7 @@ export class StorageService {
         sessionStorage.clear()
     }
 
-    // Manipulation du local storage => Tant que le cache n'a pa été vidé 
+    // Manipulation du local storage => Tant que le cache n'a pa été vidé
 
     // pour ajout d'élément
     setLocalStorage(cle : string, valeur : any) : void{

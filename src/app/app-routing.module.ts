@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './shared/home/home.component';
 import { BindingComponent } from './components/demos/binding/binding.component';
 import { PipeComponent } from './components/demos/pipe/pipe.component';
@@ -16,6 +15,8 @@ import { ProfilUtilisateurComponent } from './components/demos/routing/profil-ut
 import { authGuard } from './tools/guards/auth.guard';
 import { StorageComponent } from './components/demos/storage/storage/storage.component';
 import { BehaviorSubjetComponent } from './components/demos/behavior-subjet/behavior-subjet.component';
+import { ConsoApiComponent } from './components/demos/conso-api/conso-api.component';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent},
@@ -30,6 +31,7 @@ const routes: Routes = [
         { path: 'routing', component: RoutingComponent},
         { path: 'storage', component: StorageComponent},
         { path: 'behaviorSubject', component: BehaviorSubjetComponent},
+        { path: 'consoApi', component: ConsoApiComponent},
     ]},
     { path: 'exos', children: [
         { path : 'chronometre', component : ChronometreComponent},
