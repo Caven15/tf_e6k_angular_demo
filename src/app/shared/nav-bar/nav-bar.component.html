@@ -13,7 +13,6 @@
                 <a routerLink="/demos/routing">Routing</a>
                 <a routerLink="/demos/storage">Session storage</a>
                 <a routerLink="/demos/behaviorSubject">Behavior Subject</a>
-                <a routerLink="/demos/login">Authentification</a>
 
 
             </div>
@@ -25,14 +24,15 @@
                 <a routerLink="/exos/listeProduits">Liste produits</a>
                 <a routerLink="/exos/shopping">shopping list</a>
                 <a routerLink="/exos/shoppingService">shopping list service</a>
+                <a routerLink="/exos/pokedex">Pokedex</a>
             </div>
         </ul>
     </div>
     <div class="nav-bar-right">
         @if (etat === 'état initial') {
-            <p>état a l'abonement de behaviorSubject</p>
+            <p>état a l'abonement de behaviorSubject : {{etat}}</p>
         } @else {
-            <p>Ha, changement d'éat, je ne suis plus sur l'état initial....</p>
+            <p>Ha, changement d'éat, je ne suis plus sur l'état initial.... => {{etat}}</p>
         }
     </div>
 </nav>

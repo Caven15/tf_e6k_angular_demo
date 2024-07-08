@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Json } from 'sequelize/types/utils';
 
 @Injectable({
     providedIn: 'root'

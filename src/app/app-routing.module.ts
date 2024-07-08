@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './shared/home/home.component';
 import { BindingComponent } from './components/demos/binding/binding.component';
 import { PipeComponent } from './components/demos/pipe/pipe.component';
@@ -37,7 +36,9 @@ const routes: Routes = [
         { path : 'chronometre', component : ChronometreComponent},
         { path : 'listeProduits', component: ListeProduitsComponent},
         { path : 'shopping', component: ShoppingComponent},
-        { path : 'shoppingService', component : ShoppingListServiceComponent}
+        { path : 'shoppingService', component : ShoppingListServiceComponent},
+        { path : 'pokedex', component : ListComponent},
+        { path : 'pokemon/:id', component : DetailComponent}
     ]},
     { path: '', redirectTo: 'home', pathMatch: 'full'} // Redirection par défault
 ];

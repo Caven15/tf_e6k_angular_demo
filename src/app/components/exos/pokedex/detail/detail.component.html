@@ -1,0 +1,78 @@
+<div class="container" *ngIf="pokemon">
+    <div class="row mt-5">
+        <div class="col-12 col-md-4 mb-2">
+            <button (click)="navigateTo('prev')" class="btn btn-primary w-100" [disabled]="pokemon.id === 1">
+                <i class="bi bi-arrow-left-circle"></i> Précédent
+            </button>
+        </div>
+        <div class="col-12 col-md-4 mb-2">
+            <button (click)="goBack()" class="btn btn-primary w-100">
+                <i class="bi bi-arrow-down-circle"></i> Retour à la liste
+            </button>
+        </div>
+        <div class="col-12 col-md-4 mb-2">
+            <button (click)="navigateTo('next')" class="btn btn-primary w-100" [disabled]="pokemon.id === 151">
+                <i class="bi bi-arrow-right-circle"></i> Suivant
+            </button>
+        </div>
+    </div>
+    <div class="card mt-5">
+        <div class="card-header text-center">
+            <h1>{{pokemon.name | titlecase}}</h1>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <img *ngIf="hasSprites()" [src]="pokemon.sprites.other.dream_world.front_default"
+                        class="img-fluid pokemon-image" alt="{{pokemon.name}}">
+                </div>
+                <div class="col-md-6">
+                    <div class="row mt-4">
+                        <h2>Descriptions</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem corporis laboriosam natus
+                            iure ducimus
+                            officiis asperiores repellendus ipsum dignissimos, magni, voluptatum et possimus? Vitae,
+                            doloribus
+                            temporibus. Fuga ex qui incidunt.</p>
+                        <div class="row mt-4">
+                            <h2>Caractéristiques</h2>
+                        </div>
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Taille</th>
+                                    <td>{{pokemon.height / 10}} m</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Poids</th>
+                                    <td>{{pokemon.weight / 10}} kg</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Types</th>
+                                    <td><span *ngFor="let type of pokemon.types">{{type.type.name | titlecase}} </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row mt-4">
+                        <h2>Statistiques</h2>
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Attaque</th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Defense</th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">...</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+.pokemon-image {
+    max-height: 600px;
+    min-height: 600px;
+    max-height: 600px;
+    min-height: 600px;
+    width: auto;
+    height: auto;
+    margin: 20px auto;
+    border: 3px solid #ddd;
+    border-radius: 10px;
+    /* Changement de la bordure en cercle à un carré avec bords arrondis */
+    background-color: #f8f9fa;
+}
+
+.card {
+    margin: 20px auto;
+    max-width: 1400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #007bff;
+    color: white;
+    font-size: 1.5em;
+}
+
+.card-body {
+    padding: 20px;
+}
