@@ -16,6 +16,7 @@ import { ProfilUtilisateurComponent } from './components/demos/routing/profil-ut
 import { authGuard } from './tools/guards/auth.guard';
 import { StorageComponent } from './components/demos/storage/storage/storage.component';
 import { BehaviorSubjetComponent } from './components/demos/behavior-subjet/behavior-subjet.component';
+import { LoginComponent } from './components/demos/login/login.component';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent},
@@ -30,6 +31,7 @@ const routes: Routes = [
         { path: 'routing', component: RoutingComponent},
         { path: 'storage', component: StorageComponent},
         { path: 'behaviorSubject', component: BehaviorSubjetComponent},
+        { path: 'login', component: LoginComponent},
     ]},
     { path: 'exos', children: [
         { path : 'chronometre', component : ChronometreComponent},

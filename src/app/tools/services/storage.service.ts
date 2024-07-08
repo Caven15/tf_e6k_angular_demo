@@ -10,13 +10,13 @@ export class StorageService {
 
     // pour ajout d'élément
     setSessionStorage(cle : string, valeur : any) : void{
-        sessionStorage.setItem(cle, JSON.stringify(valeur))
+        sessionStorage.setItem(cle, valeur)
     }
 
     // Récupération d'un élément provenant du sessionStorage
     getSessionStorage(cle : string) : any {
         const valeur = sessionStorage.getItem(cle)
-        return valeur ? JSON.parse(valeur) : null
+        return valeur ? valeur : null
     }
 
     // Supprimer un élément
@@ -29,17 +29,17 @@ export class StorageService {
         sessionStorage.clear()
     }
 
-    // Manipulation du local storage => Tant que le cache n'a pa été vidé 
+    // Manipulation du local storage => Tant que le cache n'a pa été vidé
 
     // pour ajout d'élément
     setLocalStorage(cle : string, valeur : any) : void{
-        localStorage.setItem(cle, JSON.stringify(valeur))
+        localStorage.setItem(cle, valeur)
     }
 
     // Récupération d'un élément provenant du localStorage
     getLocalStorage(cle : string) : any {
         const valeur = localStorage.getItem(cle)
-        return valeur ? JSON.parse(valeur) : null
+        return valeur ? valeur : null
     }
 
     // Supprimer un élément

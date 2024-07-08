@@ -1,0 +1,22 @@
+<div>
+    <h2>Connexion</h2>
+    <form (ngSubmit)="onLogin()">
+        <input type="text" [(ngModel)]="username" name="username" placeholder="Nom d'utilisateur" required>
+        <input type="password" [(ngModel)]="password" name="password" placeholder="Mot de passe" required>
+        <button type="submit">Connexion</button>
+    </form>
+</div>
+<div>
+    <h2>Inscription</h2>
+    <form (ngSubmit)="onRegister()">
+        <input type="text" [(ngModel)]="username" name="username" placeholder="Nom d'utilisateur" required>
+        <input type="password" [(ngModel)]="password" name="password" placeholder="Mot de passe" required>
+        <button type="submit">Inscription</button>
+    </form>
+</div>
+<div>
+    <button (click)="getUsers()">Récupérer utilisateur</button>
+</div>
+<div>
+    <button (click)="logOut()">Déconnexion</button>
+</div>
