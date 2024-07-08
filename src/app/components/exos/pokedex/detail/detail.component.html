@@ -18,7 +18,7 @@
     </div>
     <div class="card mt-5">
         <div class="card-header text-center">
-            <h1>{{pokemon.name | titlecase}}</h1>
+            <h1>{{pokemon.name}}</h1>
         </div>
         <div class="card-body">
             <div class="row">
@@ -49,7 +49,7 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">Types</th>
-                                    <td><span *ngFor="let type of pokemon.types">{{type.type.name | titlecase}} </span>
+                                    <td><span *ngFor="let type of pokemon.types">{{type.type.name}} </span>
                                     </td>
                                 </tr>
                             </tbody>

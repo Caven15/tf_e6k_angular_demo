@@ -1,13 +1,13 @@
 <div class="container">
     <div class="row py-5">
         @for (pokemon of pokemons; track $index) {
-        <a [routerLink]="['/exos/pokemon', pokemon.details?.id]"
+        <a routerLink="['/exos/pokemon', pokemon.details?.id]"
             class="col-12 col-md-4 d-flex justify-content-center mb-4">
             <div class="card card-fixed-size">
                 <img class="card-img-top card-img-fixed-size"
                     [src]="pokemon.details?.sprites?.other?.dream_world?.front_default" alt="{{pokemon.details?.name}}">
                 <div class="card-body">
-                    <h5 class="card-title text-center">{{pokemon.details?.name | titlecase}}</h5>
+                    <h5 class="card-title text-center">{{pokemon.details?.name}}</h5>
                 </div>
             </div>
         </a>

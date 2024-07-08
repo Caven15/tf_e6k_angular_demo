@@ -9,7 +9,7 @@ import { PokemonService } from '../../../../tools/services/pokemon.service';
     styleUrl: './detail.component.scss'
 })
 export class DetailComponent {
-    pokemon?: Pokemon;
+    pokemon!: Pokemon;
 
     constructor(
         private route: ActivatedRoute,

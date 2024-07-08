@@ -27,44 +27,54 @@ import { SessionStorageComponent } from './components/demos/storage/session-stor
 import { LocalStorageComponent } from './components/demos/storage/local-storage/local-storage.component';
 import { StorageComponent } from './components/demos/storage/storage/storage.component';
 import { BehaviorSubjetComponent } from './components/demos/behavior-subjet/behavior-subjet.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DetailComponent } from './components/exos/pokedex/detail/detail.component';
+import { ListComponent } from './components/exos/pokedex/list/list.component';
+import { LoginComponent } from './components/demos/login/login.component';
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
+import { authInterceptor } from './tools/interceptors/auth.interceptor';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    BindingComponent,
-    HomeComponent,
-    NavBarComponent,
-    PipeComponent,
-    FormatterPipe,
-    ReductionPipe,
-    ChronometreComponent,
-    DirectivesComponent,
-    SurbrillanceDirective,
-    ListeProduitsComponent,
-    ParentComponent,
-    EnfantComponent,
-    AffichageListeComponent,
-    AjoutArticleComponent,
-    ShoppingComponent,
-    LivreServiceComponent,
-    ShoppingListServiceComponent,
-    FormulaireComponent,
-    ProfilUtilisateurComponent,
-    RoutingComponent,
-    SessionStorageComponent,
-    LocalStorageComponent,
-    StorageComponent,
-    BehaviorSubjetComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
-  providers: [
-    provideClientHydration()
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        BindingComponent,
+        HomeComponent,
+        NavBarComponent,
+        PipeComponent,
+        FormatterPipe,
+        ReductionPipe,
+        ChronometreComponent,
+        DirectivesComponent,
+        SurbrillanceDirective,
+        ListeProduitsComponent,
+        ParentComponent,
+        EnfantComponent,
+        AffichageListeComponent,
+        AjoutArticleComponent,
+        ShoppingComponent,
+        LivreServiceComponent,
+        ShoppingListServiceComponent,
+        FormulaireComponent,
+        ProfilUtilisateurComponent,
+        RoutingComponent,
+        SessionStorageComponent,
+        LocalStorageComponent,
+        StorageComponent,
+        DetailComponent,
+        ListComponent,
+        BehaviorSubjetComponent,
+        LoginComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
+    providers: [
+        provideClientHydration(),
+        provideHttpClient(withInterceptors([authInterceptor]), withFetch())
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

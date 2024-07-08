@@ -16,6 +16,9 @@ import { authGuard } from './tools/guards/auth.guard';
 import { StorageComponent } from './components/demos/storage/storage/storage.component';
 import { BehaviorSubjetComponent } from './components/demos/behavior-subjet/behavior-subjet.component';
 import { LoginComponent } from './components/demos/login/login.component';
+import { ListComponent } from './components/exos/pokedex/list/list.component';
+import { DetailComponent } from './components/exos/pokedex/detail/detail.component';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent},

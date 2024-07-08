@@ -7,7 +7,7 @@ import { PokemonService } from '../../../../tools/services/pokemon.service';
     styleUrl: './list.component.scss'
 })
 export class ListComponent {
-    pokemons: any[] = []
+    pokemons!: any[]
     offsetActuel: number = 0
     limit: number = 20
     page: number = 1
