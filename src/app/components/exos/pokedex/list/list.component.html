@@ -1,24 +1,50 @@
 <div class="container">
     <div class="row py-5">
-        @for (pokemon of pokemons; track $index) {
-        <a routerLink="['/exos/pokemon', pokemon.details?.id]"
-            class="col-12 col-md-4 d-flex justify-content-center mb-4">
-            <div class="card card-fixed-size">
-                <img class="card-img-top card-img-fixed-size"
-                    [src]="pokemon.details?.sprites?.other?.dream_world?.front_default" alt="{{pokemon.details?.name}}">
-                <div class="card-body">
-                    <h5 class="card-title text-center">{{pokemon.details?.name}}</h5>
-                </div>
-            </div>
-        </a>
-        }
+        <div class="col-12 mb-4">
+            <input type="text" class="form-control" placeholder="Rechercher un Pokémon par nom"
+                [(ngModel)]="nomPokemon">
+        </div>
+        <div class="col-12 mb-4">
+            <button (click)="rechercherPokemon()" class="btn btn-primary w-100">Rechercher</button>
+        </div>
     </div>
+
+    <div class="row py-5">
+        <div *ngIf="searchResults.length > 0" class="col-12">
+            @for (pokemon of searchResults; track $index) {
+            <div class="d-flex justify-content-center mb-4">
+                <a [routerLink]="['/exos/pokemon', pokemon.id]" class="card card-fixed-size w-100">
+                    <img class="card-img-top card-img-fixed-size"
+                        [src]="pokemon.sprites?.other?.dream_world?.front_default" alt="{{pokemon.name}}">
+                    <div class="card-body">
+                    </div>
+                </a>
+            </div>
+            }
+        </div>
+
+        <div *ngIf="searchResults.length === 0" class="row">
+            @for (pokemon of pokemons; track $index) {
+            <div class="col-12 col-md-4 d-flex justify-content-center mb-4">
+                <a [routerLink]="['/exos/pokemon', pokemon.details?.id]" class="card card-fixed-size">
+                    <img class="card-img-top card-img-fixed-size"
+                        [src]="pokemon.details?.sprites?.other?.dream_world?.front_default"
+                        alt="{{pokemon.details?.name}}">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">{{pokemon.details?.name | titlecase}}</h5>
+                    </div>
+                </a>
+            </div>
+            }
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-12 text-center mb-5">
-            <button (click)="charger('-')" class="btn btn-secondary m-2" [disabled]="offsetActuel === 0">
+            <button (click)="charger('-')" class="btn btn-secondary m-2" [disabled]="currentOffset === 0">
                 <i class="bi bi-arrow-left-circle"></i> Précédent
             </button>
-            <button (click)="charger('+')" class="btn btn-secondary m-2" [disabled]="offsetActuel + limit >= 151">
+            <button (click)="charger('+')" class="btn btn-secondary m-2" [disabled]="currentOffset + limit >= 151">
                 <i class="bi bi-arrow-right-circle"></i> Suivant
             </button>
         </div>

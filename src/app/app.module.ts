@@ -73,7 +73,7 @@ import { authInterceptor } from './tools/interceptors/auth.interceptor';
     ],
     providers: [
         provideClientHydration(),
-        provideHttpClient(withInterceptors([authInterceptor]), withFetch())
+        provideHttpClient( withFetch())
     ],
     bootstrap: [AppComponent]
 })

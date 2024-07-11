@@ -19,6 +19,7 @@ import { LoginComponent } from './components/demos/login/login.component';
 import { ListComponent } from './components/exos/pokedex/list/list.component';
 import { DetailComponent } from './components/exos/pokedex/detail/detail.component';
 import { RouterModule, Routes } from '@angular/router';
+import { pokemonResolver } from './tools/pokemon.resolver';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent},
@@ -41,7 +42,7 @@ const routes: Routes = [
         { path : 'shopping', component: ShoppingComponent},
         { path : 'shoppingService', component : ShoppingListServiceComponent},
         { path : 'pokedex', component : ListComponent},
-        { path : 'pokemon/:id', component : DetailComponent}
+        { path: 'pokemon/:id', resolve: { pokemon: pokemonResolver }, component:  DetailComponent},
     ]},
     { path: '', redirectTo: 'home', pathMatch: 'full'} // Redirection par défault
 ];

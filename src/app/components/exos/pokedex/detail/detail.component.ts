@@ -1,33 +1,25 @@
-import { Component } from '@angular/core';
-import { Pokemon } from '../../../../models/pokemon.model';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PokemonService } from '../../../../tools/services/pokemon.service';
+import { Pokemon } from '../../../../models/pokemon.model';
 
 @Component({
     selector: 'app-detail',
     templateUrl: './detail.component.html',
-    styleUrl: './detail.component.scss'
+    styleUrls: ['./detail.component.scss']
 })
-export class DetailComponent {
-    pokemon!: Pokemon;
+export class DetailComponent implements OnInit {
+    pokemon?: Pokemon;
+    isLoading = true;
 
     constructor(
         private route: ActivatedRoute,
-        private router: Router,
-        private pokemonService: PokemonService
+        private router: Router
     ) { }
 
     ngOnInit(): void {
-        // Utilisation de paramMap pour écouter les changements d'ID dans l'URL
-        this.route.paramMap.subscribe(params => {
-            const id = Number(params.get('id'));
-            this.chargerPokemon(id);
-        });
-    }
-
-    chargerPokemon(id: number): void {
-        this.pokemonService.obtenirDetailPokemon(id).subscribe((pokemon) => {
-            this.pokemon = pokemon;
+        this.route.data.subscribe((data) => {
+            this.pokemon = data['pokemon'];
+            this.isLoading = false;
         });
     }
 
@@ -43,9 +35,14 @@ export class DetailComponent {
         const currentId = Number(this.route.snapshot.paramMap.get('id'));
         let newId = direction === 'next' ? currentId + 1 : currentId - 1;
 
-        // Navigation vers la nouvelle URL avec le nouvel ID
         if (newId >= 1 && newId <= 151) {
-            this.router.navigate(['/exos/pokemon', newId]);
+            this.isLoading = true;
+            this.router.navigate(['/exos/pokemon', newId]).then(() => {
+                this.route.data.subscribe((data) => {
+                    this.pokemon = data['pokemon'];
+                    this.isLoading = false;
+                });
+            });
         }
     }
 }

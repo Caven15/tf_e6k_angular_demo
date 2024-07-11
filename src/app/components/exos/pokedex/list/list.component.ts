@@ -7,38 +7,51 @@ import { PokemonService } from '../../../../tools/services/pokemon.service';
     styleUrl: './list.component.scss'
 })
 export class ListComponent {
-    pokemons!: any[]
-    offsetActuel: number = 0
-    limit: number = 20
-    page: number = 1
-    maxPokemon = 151
+    pokemons: any[] = [];
+    searchResults: any[] = [];
+    currentOffset = 0;
+    limit = 20;
+    maxPokemons = 151;
+    nomPokemon!: string;
 
     constructor(private pokemonService: PokemonService) { }
 
     ngOnInit(): void {
-        this.chargerPokemon()
+        this.chargerPokemons();
     }
 
-    chargerPokemon(): void {
-        const limit = Math.min(this.limit, this.maxPokemon, this.offsetActuel)
-        this.pokemonService.obtenirPokemons(this.offsetActuel, limit).subscribe((reponse) => {
-            this.pokemons = reponse.results
-            this.pokemons.forEach(pokemon => {
-                console.log(pokemon);
-                const pokemonId = parseInt(pokemon.url.split('/').slice(-2, -1)[0])
-                this.pokemonService.obtenirDetailPokemon(pokemonId).subscribe((details) => {
-                    pokemon.details = details
-                })
-            })
-        })
+    chargerPokemons(): void {
+        const fetchLimit = Math.min(this.limit, this.maxPokemons - this.currentOffset);
+        if (fetchLimit > 0) {
+            this.pokemonService.obtenirPokemons(this.currentOffset, fetchLimit).subscribe((response) => {
+                this.pokemons = response.results;
+                this.pokemons.forEach(pokemon => {
+                    const pokemonId = parseInt(pokemon.url.split('/').slice(-2, -1)[0]);
+                    this.pokemonService.obtenirDetailsPokemon(pokemonId).subscribe((details) => {
+                        pokemon.details = details;
+                    });
+                });
+            });
+        }
     }
 
     charger(sensDeplacement: string): void {
-        if (sensDeplacement === '+' && this.offsetActuel + this.limit < this.maxPokemon) {
-            this.offsetActuel += this.limit
-        } else if (sensDeplacement === '-' && this.offsetActuel > 0) {
-            this.offsetActuel -= this.limit
+        if (sensDeplacement === "+" && this.currentOffset + this.limit < this.maxPokemons) {
+            this.currentOffset += this.limit;
+        } else if (sensDeplacement === "-" && this.currentOffset > 0) {
+            this.currentOffset -= this.limit;
         }
-        this.chargerPokemon()
+        this.chargerPokemons();
+    }
+
+    rechercherPokemon(): void {
+        this.pokemonService.rechercherPokemon(this.nomPokemon.toLowerCase()).subscribe(
+            (result: any) => {
+                this.searchResults = [result];
+            },
+            (error) => {
+                this.searchResults = [];
+            }
+        );
     }
 }
